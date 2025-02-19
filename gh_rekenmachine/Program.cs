@@ -20,6 +20,8 @@ namespace RekenMachine
         // 2: zoek de te gebruiken technieken op zodat je weet hoe ze moeten werken
         // 3: begin met programmeren en debuggen
         // 4: maak een exe
+
+        // Dit is het hoofdprogramma
         static void Main(string[] args)
         {
             // Voer het eerste getal in
@@ -31,18 +33,27 @@ namespace RekenMachine
             // Voer de bewerking in
             Console.WriteLine("Wat is de bewerking:");
             string bewerking = Console.ReadLine();
-            switch (bewerking)
+            string uitkomst = Berekenen(waarde1, waarde2, bewerking);
+            Console.WriteLine("De uitkomst van " + waarde1 + " " + bewerking + " " + waarde2 + " = " + uitkomst);
+         }
+
+        private static string Berekenen(string w1, string w2, string bewerk)
+        {
+            string resultaat = "";
+            switch (bewerk)
             {
                 case "+":
                     // code block
-                    int Uitkomst = Int32.Parse(waarde1) + Int32.Parse(waarde2);
-                    Console.WriteLine("de uitkomst is: " + Uitkomst.ToString());
+                    int uitkomst = Int32.Parse(w1) + Int32.Parse(w2);
+                    resultaat = uitkomst.ToString();
                     break;
                 default:
                     // Geef vawd
-                    Console.WriteLine("öei");
+                    resultaat = "oei";
                     break;
             }
+            return resultaat;
+
         }
 
     }
